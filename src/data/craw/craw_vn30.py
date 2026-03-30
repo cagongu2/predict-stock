@@ -5,7 +5,7 @@ import os
 import io
 
 json_file = r"d:\predict-stock\src\data\craw\vn30.json"
-output_dir = r"d:\predict-stock\src\data\raw"
+output_dir = r"d:\predict-stock\src\data\raw-data"
 
 # Create output dir if not exists
 os.makedirs(output_dir, exist_ok=True)

@@ -1,2 +1,3 @@
-src/data/raw
+src/data/raw-data
+src/data/processed/cleaned
 docs
