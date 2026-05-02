@@ -1,0 +1,24 @@
+{
+  "stock_code": "VRE",
+  "feature_cols": [
+    "open",
+    "high",
+    "low",
+    "volume",
+    "EMA_9",
+    "SMA_5",
+    "SMA_10",
+    "SMA_15",
+    "SMA_30",
+    "RSI",
+    "MACD",
+    "MACD_signal"
+  ],
+  "seq_len": 20,
+  "hidden_size": 64,
+  "num_layers": 2,
+  "dropout": 0.2,
+  "input_size": 12,
+  "valid_split_idx": 728,
+  "test_split_idx": 884
+}
