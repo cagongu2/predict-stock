@@ -274,3 +274,208 @@
 .data-table tr:hover td {
   background: rgba(255, 255, 255, 0.02);
 }
+
+/* ── Future prediction button ── */
+.btn-future {
+  background: linear-gradient(135deg, #f97316, #fb923c);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s, transform 0.1s;
+  font-size: 0.95rem;
+}
+
+.btn-future:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-future:active {
+  transform: translateY(0);
+}
+
+/* ── Predict button ── */
+.btn-predict {
+  background: linear-gradient(135deg, #7c3aed, #a78bfa);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s, transform 0.1s;
+  font-size: 0.95rem;
+}
+
+.btn-predict:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-predict:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-predict:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Future metric card accent ── */
+.future-card::before {
+  background: linear-gradient(90deg, #f97316, #fb923c) !important;
+}
+
+/* ── Modal overlay ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modal-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 560px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.25s ease;
+  overflow: hidden;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(24px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 28px;
+  border-bottom: 1px solid #334155;
+}
+
+.modal-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.modal-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.modal-close {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid #334155;
+  color: var(--text-muted);
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.modal-close:hover {
+  background: rgba(255,255,255,0.1);
+  color: var(--text-main);
+}
+
+/* ── Future table ── */
+.future-table-wrapper {
+  padding: 16px 28px;
+}
+
+.future-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.future-table th {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 10px 12px;
+  border-bottom: 1px solid #334155;
+}
+
+.future-row td {
+  padding: 14px 12px;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+  transition: background 0.15s;
+}
+
+.future-row:last-child td {
+  border-bottom: none;
+}
+
+.future-row:hover td {
+  background: rgba(255,255,255,0.03);
+}
+
+/* ── Trend badge ── */
+.trend-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.trend-badge[data-trend="up"] {
+  background: rgba(34, 197, 94, 0.12);
+  color: #4ade80;
+}
+
+.trend-badge[data-trend="down"] {
+  background: rgba(239, 68, 68, 0.12);
+  color: #f87171;
+}
+
+.trend-badge[data-trend="neutral"] {
+  background: rgba(100, 116, 139, 0.15);
+  color: #94a3b8;
+}
+
+/* ── Modal footer ── */
+.modal-footer {
+  padding: 16px 28px;
+  border-top: 1px solid #334155;
+  font-size: 0.8rem;
+  color: #64748b;
+  text-align: center;
+}
